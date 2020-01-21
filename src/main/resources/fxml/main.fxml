@@ -10,12 +10,12 @@
    <children>
       <ListView fx:id="list" layoutX="10.0" layoutY="10.0" onMouseClicked="#onClickLoad" prefHeight="265.0" prefWidth="290.0">
          <contextMenu>
-            <ContextMenu>
+            <ContextMenu fx:id="contextMenu">
               <items>
                 <MenuItem mnemonicParsing="false" text="Создать..." />
                   <MenuItem mnemonicParsing="false" text="Удалить" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Настройки..." />
+                  <MenuItem fx:id="menuSettings" mnemonicParsing="false" onAction="#onMenuSettingsClick" text="Настройки..." />
               </items>
             </ContextMenu>
          </contextMenu></ListView>

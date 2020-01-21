@@ -16,9 +16,9 @@ public class MainApp extends Application {
     }
 
     public void start(Stage stage) throws Exception {
-        String fxmlFile = "/fxml/hello.fxml";
+        String fxmlFile = "/fxml/main.fxml";
         FXMLLoader loader = new FXMLLoader();
-        Parent root = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
+        Parent root = loader.load(getClass().getResourceAsStream(fxmlFile));
         stage.setTitle("ChromeLoader by GilvanovDR");
         stage.setScene(new Scene(root));
         stage.resizableProperty().setValue(false);

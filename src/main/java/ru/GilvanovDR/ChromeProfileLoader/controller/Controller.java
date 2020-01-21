@@ -7,13 +7,19 @@ package ru.GilvanovDR.ChromeProfileLoader.controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import ru.GilvanovDR.ChromeProfileLoader.Form.OptionsForm;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
+
 //todo Exceptions (пустой список, не верный пать к списку, не верный путь к программе)
 //todo создание пустого профиля, создать профиль по умолчанию
 public class Controller {
@@ -23,12 +29,27 @@ public class Controller {
 
 
     @FXML
+    private MenuItem menuSettings;
+
+    @FXML
     private ListView<String> list;
 
     @FXML
     public void initialize() {
+
         list.setItems(getProfileList());
 
+    }
+
+    public  void onMenuSettingsClick() {
+
+
+        OptionsForm op = new OptionsForm();
+        try {
+            op.start(new Stage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
@@ -40,6 +61,7 @@ public class Controller {
                 System.exit(0);
             }
         }
+
     }
 
     private void runApplication(String text) {
@@ -53,7 +75,7 @@ public class Controller {
     }
 
     private ObservableList getProfileList() {
-        ArrayList<String> ls = new ArrayList<String>();
+        ArrayList<String> ls = new ArrayList<>();
         System.out.println();
         for (File file1 : Objects.requireNonNull(profileListPath.listFiles())) {
             if (file1.isDirectory()) {
