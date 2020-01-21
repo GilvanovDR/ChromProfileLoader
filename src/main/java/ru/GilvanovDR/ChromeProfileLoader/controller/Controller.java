@@ -14,10 +14,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
-
+//todo Exceptions (пустой список, не верный пать к списку, не верный путь к программе)
+//todo создание пустого профиля, создать профиль по умолчанию
 public class Controller {
 
-    private final static File profileListPath = new File("C:\\Users\\termuser\\Desktop\\ChromeProfile");
+    private final static File profileListPath = new File("C:\\");
     private final static String chromeExecPath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
 
 
@@ -34,8 +35,10 @@ public class Controller {
     public void onClickLoad(MouseEvent mouseEvent) {
         String text;
         if ((text = list.getFocusModel().getFocusedItem()) != null) {
-            runApplication(text);
-            System.exit(0);
+            if (mouseEvent.getClickCount() == 2) {
+                runApplication(text);
+                System.exit(0);
+            }
         }
     }
 
@@ -46,7 +49,6 @@ public class Controller {
             Process process = builder.start();
         } catch (IOException e) {
             System.out.println(e.getMessage());
-            ;
         }
     }
 

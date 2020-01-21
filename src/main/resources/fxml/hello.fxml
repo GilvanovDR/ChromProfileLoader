@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="275.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.GilvanovDR.ChromeProfileLoader.controller.Controller">
+<AnchorPane prefHeight="275.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.GilvanovDR.ChromeProfileLoader.controller.Controller">
    <children>
-      <ListView fx:id="list" layoutX="10.0" layoutY="10.0" onMouseClicked="#onClickLoad" prefHeight="265.0" prefWidth="290.0" />
+      <ListView fx:id="list" layoutX="10.0" layoutY="10.0" onMouseClicked="#onClickLoad" prefHeight="265.0" prefWidth="290.0">
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="Создать..." />
+                  <MenuItem mnemonicParsing="false" text="Удалить" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Настройки..." />
+              </items>
+            </ContextMenu>
+         </contextMenu></ListView>
    </children>
 </AnchorPane>
