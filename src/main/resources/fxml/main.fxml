@@ -6,7 +6,7 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="275.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.GilvanovDR.ChromeProfileLoader.controller.Controller">
+<AnchorPane prefHeight="275.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.GilvanovDR.ChromeProfileLoader.controller.MainController">
    <children>
       <ListView fx:id="list" layoutX="10.0" layoutY="10.0" onMouseClicked="#onClickLoad" prefHeight="265.0" prefWidth="290.0">
          <contextMenu>

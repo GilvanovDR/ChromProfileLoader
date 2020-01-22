@@ -7,12 +7,10 @@ package ru.GilvanovDR.ChromeProfileLoader.controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ContextMenu;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import ru.GilvanovDR.ChromeProfileLoader.Form.OptionsForm;
 
 import java.io.File;
@@ -22,31 +20,23 @@ import java.util.Objects;
 
 //todo Exceptions (пустой список, не верный пать к списку, не верный путь к программе)
 //todo создание пустого профиля, создать профиль по умолчанию
-public class Controller {
+public class MainController {
 
     private final static File profileListPath = new File("C:\\");
     private final static String chromeExecPath = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
-
-
-    @FXML
-    private MenuItem menuSettings;
 
     @FXML
     private ListView<String> list;
 
     @FXML
     public void initialize() {
-
         list.setItems(getProfileList());
-
     }
 
     public  void onMenuSettingsClick() {
-
-
-        OptionsForm op = new OptionsForm();
+        OptionsForm op = OptionsForm.getInstance();
         try {
-            op.start(new Stage());
+            op.getForm();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -55,20 +45,20 @@ public class Controller {
     @FXML
     public void onClickLoad(MouseEvent mouseEvent) {
         String text;
+
         if ((text = list.getFocusModel().getFocusedItem()) != null) {
             if (mouseEvent.getClickCount() == 2) {
                 runApplication(text);
                 System.exit(0);
             }
         }
-
     }
 
     private void runApplication(String text) {
         String execArgs = "--user-data-dir=" + profileListPath.getPath() + "\\" + text;
         ProcessBuilder builder = new ProcessBuilder(chromeExecPath, execArgs);
         try {
-            Process process = builder.start();
+            builder.start();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
