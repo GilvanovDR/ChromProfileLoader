@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.GilvanovDR.ChromeProfileLoader.controller.OptionController">
+<GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.GilvanovDR.ChromeProfileLoader.controller.OptionsController">
   <columnConstraints>
       <ColumnConstraints />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
@@ -21,15 +21,15 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <TextField GridPane.columnIndex="1" />
+      <TextField fx:id="profileFolder" GridPane.columnIndex="1" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Путь к папке с профилями" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Путьк к Chrome/Vivaldi/EDGE" GridPane.rowIndex="1" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Путь к  профилю по умолчанию  " GridPane.rowIndex="2" />
-      <TextField layoutX="189.0" layoutY="38.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <TextField layoutX="189.0" layoutY="118.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Button mnemonicParsing="false" text="..." GridPane.columnIndex="2" />
-      <Button mnemonicParsing="false" text="..." GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" text="..." GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextField fx:id="chromeFilePath" layoutX="189.0" layoutY="38.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="defaultProfileZip" layoutX="189.0" layoutY="118.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onMouseClicked="#selectProfileFolder" text="..." GridPane.columnIndex="2" />
+      <Button mnemonicParsing="false" onMouseClicked="#selectChromeFile" text="..." GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" onMouseClicked="#selectDefaultProfileZip" text="..." GridPane.columnIndex="2" GridPane.rowIndex="2" />
       <Button mnemonicParsing="false" text="?" GridPane.columnIndex="2" GridPane.rowIndex="3" />
       <HBox GridPane.rowIndex="3">
          <children>
