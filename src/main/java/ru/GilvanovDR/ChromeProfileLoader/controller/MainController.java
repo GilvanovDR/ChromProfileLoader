@@ -8,9 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
-import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import ru.GilvanovDR.ChromeProfileLoader.Form.OptionsForm;
 
 import java.io.File;
@@ -33,7 +31,7 @@ public class MainController {
         list.setItems(getProfileList());
     }
 
-    public  void onMenuSettingsClick() {
+    public void onMenuSettingsClick() {
         OptionsForm op = OptionsForm.getInstance();
         try {
             op.getForm();

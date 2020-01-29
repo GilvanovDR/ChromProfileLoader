@@ -14,13 +14,14 @@ import java.io.IOException;
 public class MainForum {
     private static MainForum instance = new MainForum();
 
+    private MainForum() {
+
+    }
+
     public static MainForum getInstance() {
         return instance;
     }
 
-    private MainForum() {
-
-    }
     public void StartForm(Stage stage) {
         String fxmlFile = "/fxml/main.fxml";
         FXMLLoader loader = new FXMLLoader();
@@ -33,7 +34,6 @@ public class MainForum {
         stage.setTitle("ChromeLoader by GilvanovDR");
         stage.setScene(new Scene(root));
         stage.resizableProperty().setValue(false);
-        // stage.fullScreenExitKeyProperty().setValue(new KeyCodeCombination());
         stage.show();
     }
 }

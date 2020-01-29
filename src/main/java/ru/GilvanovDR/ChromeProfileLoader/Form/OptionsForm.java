@@ -4,11 +4,9 @@
 
 package ru.GilvanovDR.ChromeProfileLoader.Form;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,10 +14,10 @@ import java.io.IOException;
 //todo must be lazy singleton
 public class OptionsForm {
 
-    Stage primaryStage = new Stage();
-    public static  OptionsForm instance;
+    private static OptionsForm instance;
+    private Stage primaryStage = new Stage();
 
-    private OptionsForm(){
+    private OptionsForm() {
         String fxmlFile = "/fxml/options.fxml";
         FXMLLoader loader = new FXMLLoader();
         Parent root = null;
@@ -35,10 +33,11 @@ public class OptionsForm {
 
     public static OptionsForm getInstance() {
         if (instance == null) {
-            instance= new OptionsForm();
+            instance = new OptionsForm();
         }
         return instance;
     }
+
     public void getForm() throws Exception {
         primaryStage.show();
     }
