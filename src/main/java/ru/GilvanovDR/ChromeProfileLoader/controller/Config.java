@@ -6,9 +6,9 @@ package ru.GilvanovDR.ChromeProfileLoader.controller;
 
  class Config {
     private static Config ourInstance = new Config();
-    private String profileFolder;
-    private String chromeFilePath;
-    private String defaultProfileZip;
+    private String profileFolder = "";
+    private String chromeFilePath = "";
+    private String defaultProfileZip = "";
 
      static Config getInstance() {
         return ourInstance;

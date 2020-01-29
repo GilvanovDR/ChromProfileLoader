@@ -21,6 +21,7 @@ public class OptionsController {
     @FXML
     private TextField defaultProfileZip;
 
+
     public void initialize() {
         if (Config.getInstance().getProfileFolder() != null) {
             profileFolder.setText(Config.getInstance().getProfileFolder());
@@ -40,7 +41,17 @@ public class OptionsController {
         OptionsForm.getInstance().closeForm();
     }
 
+
     public void onCancelButtonClick() {
+        if (Config.getInstance().getProfileFolder() != null) {
+            profileFolder.setText(Config.getInstance().getProfileFolder());
+        }
+        if (Config.getInstance().getChromeFilePath() != null) {
+            chromeFilePath.setText(Config.getInstance().getChromeFilePath());
+        }
+        if (Config.getInstance().getDefaultProfileZip() != null) {
+            defaultProfileZip.setText(Config.getInstance().getDefaultProfileZip());
+        }
         OptionsForm.getInstance().closeForm();
     }
 
